@@ -856,7 +856,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\laragon\www\sisteminformasi\resources\js\core\app.js */"./resources/js/core/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\full-version\resources\js\core\app.js */"./resources/js/core/app.js");
 
 
 /***/ })
