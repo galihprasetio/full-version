@@ -14,7 +14,8 @@
         "laravel/framework": "^6.0",
         "laravel/passport": "^7.3",
         "laravel/tinker": "^1.0",
-        "laravel/ui": "1"
+        "laravel/ui": "1",
+        "yajra/laravel-datatables-oracle": "^9.15"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

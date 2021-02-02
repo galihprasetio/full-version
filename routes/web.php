@@ -16,7 +16,9 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
-       
+        // Penambahan fitur 
+        Route::get('users/table','Sistem\UserController@table');
+        Route::resource('users/','Sistem\UserController');
         // Route url
         Route::get('/', 'DashboardController@dashboardAnalytics');
 

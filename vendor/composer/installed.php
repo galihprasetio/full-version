@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'a068f910adaca207724cd00127e2d720d415640b',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -401,12 +401,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'a068f910adaca207724cd00127e2d720d415640b',
     ),
     'laravel/passport' => 
     array (
@@ -536,12 +536,12 @@
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.43.0',
-      'version' => '2.43.0.0',
+      'pretty_version' => '2.44.0',
+      'version' => '2.44.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'd32c57d8389113742f4a88725a170236470012e2',
+      'reference' => 'e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd',
     ),
     'nikic/php-parser' => 
     array (
@@ -1213,6 +1213,15 @@
       array (
       ),
       'reference' => 'bafc69caeb4d49c39fd0779086c03a3738cbb389',
+    ),
+    'yajra/laravel-datatables-oracle' => 
+    array (
+      'pretty_version' => 'v9.15.2',
+      'version' => '9.15.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e0b416d8b7d4472b16217c40e74284074cc34dde',
     ),
     'zendframework/zend-diactoros' => 
     array (
