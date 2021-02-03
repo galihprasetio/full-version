@@ -59,6 +59,6 @@
 
         {{-- include default scripts --}}
         @include('panels/scripts')
-
+        @include('sweetalert::alert')
     </body>
 </html>

@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a068f910adaca207724cd00127e2d720d415640b',
+    'reference' => '53f677852cab3f2e1e0d4894b8cae26a3d38cab6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -196,196 +196,196 @@ private static $installed = array (
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/broadcasting' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/bus' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/cache' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/config' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/console' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/container' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/contracts' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/cookie' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/database' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/encryption' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/events' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/filesystem' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/hashing' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/http' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/log' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/mail' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/notifications' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/pagination' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/pipeline' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/queue' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/redis' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/routing' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/session' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/support' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/translation' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/validation' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'illuminate/view' => 
     array (
       'replaced' => 
       array (
-        0 => 'v6.20.15',
+        0 => 'v6.20.16',
       ),
     ),
     'jakub-onderka/php-console-color' => 
@@ -415,12 +415,12 @@ private static $installed = array (
     ),
     'laravel/framework' => 
     array (
-      'pretty_version' => 'v6.20.15',
-      'version' => '6.20.15.0',
+      'pretty_version' => 'v6.20.16',
+      'version' => '6.20.16.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'b42c2d845cdd827ac5a53cacf16af4a0b5dd8be1',
+      'reference' => '806082fb559fe595cb17cd6aa8571f03ed287814',
     ),
     'laravel/laravel' => 
     array (
@@ -429,7 +429,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a068f910adaca207724cd00127e2d720d415640b',
+      'reference' => '53f677852cab3f2e1e0d4894b8cae26a3d38cab6',
     ),
     'laravel/passport' => 
     array (
@@ -829,6 +829,15 @@ private static $installed = array (
       ),
       'reference' => '7e1633a6964b48589b142d60542f9ed31bd37a92',
     ),
+    'realrashid/sweet-alert' => 
+    array (
+      'pretty_version' => 'v3.2.1',
+      'version' => '3.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5c07913e4679ddc75e26d9333ee6480f46018e94',
+    ),
     'rhumsaa/uuid' => 
     array (
       'replaced' => 
@@ -955,8 +964,8 @@ private static $installed = array (
     ),
     'symfony/css-selector' => 
     array (
-      'pretty_version' => 'v5.2.2',
-      'version' => '5.2.2.0',
+      'pretty_version' => 'v5.2.3',
+      'version' => '5.2.3.0',
       'aliases' => 
       array (
       ),
@@ -1052,12 +1061,12 @@ private static $installed = array (
     ),
     'symfony/mime' => 
     array (
-      'pretty_version' => 'v5.2.2',
-      'version' => '5.2.2.0',
+      'pretty_version' => 'v5.2.3',
+      'version' => '5.2.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '37bade585ea100d235c031b258eff93b5b6bb9a9',
+      'reference' => '7dee6a43493f39b51ff6c5bb2bd576fe40a76c86',
     ),
     'symfony/polyfill-ctype' => 
     array (

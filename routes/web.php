@@ -17,8 +17,12 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
         // Penambahan fitur 
-        Route::get('users/table','Sistem\UserController@table');
-        Route::resource('users/','Sistem\UserController');
+        Route::prefix('users')->group(function(){
+                Route::get('table','Sistem\UserController@table');
+                Route::get('getuser/{id}','Sistem\UserController@getUser')->name('users.getuser');
+                
+        });
+        Route::resource('users','Sistem\UserController');
         // Route url
         Route::get('/', 'DashboardController@dashboardAnalytics');
 

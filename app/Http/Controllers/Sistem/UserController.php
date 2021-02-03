@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use DataTables;
-
+use Illuminate\Support\Facades\Redirect;
+use RealRashid\SweetAlert\Facades\Alert;
 class UserController extends Controller
 {
     /**
@@ -16,12 +17,21 @@ class UserController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         $breadcrumbs = [
             ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"User List"]
         ];
         return view('/system/users/index', [
-            'breadcrumbs' => $breadcrumbs
+            'breadcrumbs' => $breadcrumbs,
+            'users' => $users,
         ]);
+    }
+
+    public function getUser(Request $request)
+    {
+        $data = User::find($request->id);
+        
+        return response()->json($data);
     }
 
     /**
@@ -43,6 +53,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->photo);
+        
+        Alert::success('Success Title', 'Success Message');
+        return redirect()->route('users.index');
     }
 
     /**

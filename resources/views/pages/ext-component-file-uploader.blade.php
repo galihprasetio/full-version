@@ -52,7 +52,8 @@
               is used to tell dropzone that there should be only one file. When there is more then 1 file the function
               <code>maxfilesexceeded</code> will be called, with the exceeding file in the first parameter. Now only 1
               file can be selected and it will be replaced with another one instead of adding it to the preview.</p>
-            <form action="#" class="dropzone dropzone-area" id="dpz-single-file">
+            <form action="data-list-view" method="POST" class="dropzone dropzone-area" id="dpz-single-file" enctype="multipart/form-data">
+              @csrf
               <div class="dz-message">Drop Files Here To Upload</div>
             </form>
           </div>

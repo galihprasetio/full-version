@@ -47,6 +47,7 @@ class DataListController extends Controller
     public function store(Request $request)
     {
         // To add/store new item
+        dd($request);
     }
 
     /**

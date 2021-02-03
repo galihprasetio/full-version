@@ -35,6 +35,11 @@
                       <i class="feather icon-user"></i>
                     </div>
                     <label for="user-name">Username</label>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </fieldset>
 
                   <fieldset class="form-label-group position-relative has-icon-left">
@@ -45,6 +50,11 @@
                       <i class="feather icon-lock"></i>
                     </div>
                     <label for="user-password">Password</label>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                   </fieldset>
                   <div class="form-group d-flex justify-content-between align-items-center">
                     <div class="text-left">
