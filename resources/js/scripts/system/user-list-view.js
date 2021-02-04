@@ -8,7 +8,7 @@
 ==========================================================================================*/
 
 $(document).ready(function() {
-  "use strict"
+  // "use strict"
   // init list view datatable
   var dataListView = $(".data-list-view").DataTable({
     responsive: false,
@@ -128,7 +128,8 @@ $(document).ready(function() {
   $('.action-edit').on("click",function(e){
     e.stopPropagation();
     var id = $(this).attr("id");
-      $.get("users.getuser/"+id, function(data){
+    var url = route('users.getuser', id);
+      $.get(url, function(data){
         $('#data-name').val(data.name);
         $('#data-email').val(data.email);
         $('#data-email').prop('readonly', true);
@@ -143,36 +144,6 @@ $(document).ready(function() {
     e.stopPropagation();
     $(this).closest('td').parent('tr').fadeOut();
   });
-
-  // dropzone init
-  // Dropzone.options.dataListUpload = {
-  //   paramName: "file", // The name that will be used to transfer the file
-  //   maxFiles: 1,
-  //   init: function () {
-  //     this.on("maxfilesexceeded", function (file) {
-  //       this.removeAllFiles();
-  //       this.addFile(file);
-  //     });
-  //   },
-  //   complete: function(files) {
-  //     var _this = this
-  //     // checks files in class dropzone and remove that files
-  //     $(".hide-data-sidebar, .cancel-data-btn, .actions .dt-buttons").on(
-  //       "click",
-  //       function() {
-  //         $(".dropzone")[0].dropzone.files.forEach(function(file) {
-  //           file.previewElement.remove()
-  //         })
-  //         $(".dropzone").removeClass("dz-started")
-  //       }
-  //     )
-  //   }
-  // }
-  // Dropzone.options.dataListUpload.complete()
-  
-  
-  
- 
 
   // mac chrome checkbox fix
   if (navigator.userAgent.indexOf("Mac OS X") != -1) {

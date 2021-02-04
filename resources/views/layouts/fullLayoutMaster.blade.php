@@ -23,7 +23,7 @@
     @endphp
 
     <body class="vertical-layout vertical-menu-modern 1-column {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'light') ? '' : $configData['theme'] }} data-menu="vertical-menu-modern" data-col="1-column"  data-layout="{{ $configData['theme'] }}">
-
+        @routes
         <!-- BEGIN: Content-->
         <div class="app-content content">
             <div class="content-wrapper">

@@ -30,7 +30,6 @@ class UserController extends Controller
     public function getUser(Request $request)
     {
         $data = User::find($request->id);
-        
         return response()->json($data);
     }
 
@@ -52,11 +51,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //dd($request->photo);
+        try {
+            Alert::success('Success', 'Data has been saved');
+            return redirect()->route('users.index');
+        } catch (\Throwable $th) {
+            Alert::success('Success', 'Data has been saved');
+        }
         
-        Alert::success('Success Title', 'Success Message');
-        return redirect()->route('users.index');
+        
     }
 
     /**

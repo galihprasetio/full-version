@@ -68,7 +68,7 @@
         @csrf
         <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
           <div>
-            <h4 class="text-uppercase">Edit Data User</h4>
+            <h4 class="text-uppercase">Data User</h4>
           </div>
           <div class="hide-data-sidebar">
             <i class="feather icon-x"></i>
@@ -133,4 +133,5 @@
 @section('page-script')
 {{-- Page js files --}}
 <script src="{{ asset(mix('js/scripts/system/user-list-view.js')) }}"></script>
+
 @endsection
