@@ -64,7 +64,7 @@
   <div class="add-new-data-sidebar">
     <div class="overlay-bg"></div>
     <div class="add-new-data">
-      <form action="{{route('users.store')}}" method="POST" enctype="multipart/form-data">
+      <form id="user-form"  enctype="multipart/form-data">
         @csrf
         <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
           <div>
@@ -84,6 +84,24 @@
               <div class="col-sm-12 data-field-col">
                 <label for="data-name">Email Address</label>
                 <input type="text" class="form-control" name="email" id="data-email">
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+              <div class="col-sm-12 data-field-col">
+                <label for="data-name">Password</label>
+                <input type="text" class="form-control" name="password" id="data-password">
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+              <div class="col-sm-12 data-field-col">
+                <label for="data-name">Confirm Password</label>
+                <input type="text" class="form-control" name="password_confirmation" id="data-password-confirm">
               </div>
               <div class="col-sm-12 data-field-col">
                 <label for="data-status">Status</label>
@@ -96,10 +114,10 @@
                 <fieldset class="form-group">
                   <label for="basicInputFile">Photo</label>
                   <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="photo" name="photo">
-                      <label class="custom-file-label" for="photo">Choose file</label>
+                    <input type="file" class="custom-file-input" id="photo" name="photo">
+                    <label class="custom-file-label" for="photo">Choose file</label>
                   </div>
-              </fieldset>
+                </fieldset>
               </div>
             </div>
           </div>
@@ -112,7 +130,7 @@
             <input type="reset" class="btn btn-outline-danger" value="Cancel">
           </div>
         </div>
-        
+
       </form>
     </div>
   </div>
@@ -134,4 +152,36 @@
 {{-- Page js files --}}
 <script src="{{ asset(mix('js/scripts/system/user-list-view.js')) }}"></script>
 
+{{-- <script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script> --}}
+<script type="text/javascript">
+  // this is the id of the form
+    $("#user-form").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    var form = $(this);
+    var url = form.attr('users.store');
+
+    $.ajax({
+          type: "POST",
+          url: url,
+          data: form.serialize(), // serializes the form's elements.
+          success: function(data)
+          {
+            Swal.fire({
+              title: 'Error!',
+              text: 'Do you want to continue',
+              icon: 'error',
+              confirmButtonText: 'Cool'
+            })
+            $(".add-new-data").removeClass("show")
+            $(".overlay-bg").removeClass("show")
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            
+          }
+        });
+
+
+    });
+</script>
 @endsection

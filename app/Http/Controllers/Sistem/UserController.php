@@ -8,6 +8,7 @@ use App\User;
 use DataTables;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     /**
@@ -51,12 +52,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            Alert::success('Success', 'Data has been saved');
-            return redirect()->route('users.index');
-        } catch (\Throwable $th) {
-            Alert::success('Success', 'Data has been saved');
-        }
+        // try {
+            
+            // $validator = Validator::make($request->all(), [
+            //     'name' => ['required', 'string', 'max:255'],
+            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            //     'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // ]);
+            // //dd($validator->fails());
+            // if ($validator->fails()) {
+            //     Alert::success('Error', $validator->errors());
+            //     return response()->json(['status' => 0,'message' => $validator->errors()]);
+            // }
+
+            // Alert::success('Success', 'Data has been saved');
+            // return redirect()->route('users.index');
+            return response()->json(['data' =>  'success']);
+        // } catch (\Throwable $th) {
+        //     Alert::success('Success', 'Data has been saved');
+        // }
         
         
     }

@@ -117,6 +117,7 @@
     "/js/scripts/extensions/tour.js": "/js/scripts/extensions/tour.js",
     "/js/scripts/extensions/unslider.js": "/js/scripts/extensions/unslider.js",
     "/js/scripts/footer.js": "/js/scripts/footer.js",
+    "/js/scripts/form-validation.js": "/js/scripts/form-validation.js",
     "/js/scripts/forms/basic-inputs.js": "/js/scripts/forms/basic-inputs.js",
     "/js/scripts/forms/form-maxlength.js": "/js/scripts/forms/form-maxlength.js",
     "/js/scripts/forms/form-tooltip-valid.js": "/js/scripts/forms/form-tooltip-valid.js",
