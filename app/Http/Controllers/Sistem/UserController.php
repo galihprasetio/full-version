@@ -54,22 +54,22 @@ class UserController extends Controller
     {
         // try {
             
-            // $validator = Validator::make($request->all(), [
-            //     'name' => ['required', 'string', 'max:255'],
-            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            //     'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // ]);
-            // //dd($validator->fails());
-            // if ($validator->fails()) {
-            //     Alert::success('Error', $validator->errors());
-            //     return response()->json(['status' => 0,'message' => $validator->errors()]);
-            // }
+            $validator = Validator::make($request->all(), [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+            //dd($validator->fails());
+            if ($validator->fails()) {
+                //Alert::success('Error', $validator->errors());
+                return response()->json(['error']);
+            }
 
-            // Alert::success('Success', 'Data has been saved');
-            // return redirect()->route('users.index');
-            return response()->json(['data' =>  'success']);
+            //Alert::success('Success', 'Data has been saved');
+            //return redirect()->route('users.index');
+            return response()->json(['success']);
         // } catch (\Throwable $th) {
-        //     Alert::success('Success', 'Data has been saved');
+        //     return response()->json(['data' => 'error']);
         // }
         
         

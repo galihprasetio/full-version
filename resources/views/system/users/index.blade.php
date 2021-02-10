@@ -151,8 +151,6 @@
 @section('page-script')
 {{-- Page js files --}}
 <script src="{{ asset(mix('js/scripts/system/user-list-view.js')) }}"></script>
-
-{{-- <script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script> --}}
 <script type="text/javascript">
   // this is the id of the form
     $("#user-form").submit(function(e) {
@@ -165,20 +163,24 @@
           type: "POST",
           url: url,
           data: form.serialize(), // serializes the form's elements.
+          dataType: 'json',
           success: function(data)
           {
-            Swal.fire({
-              title: 'Error!',
-              text: 'Do you want to continue',
-              icon: 'error',
-              confirmButtonText: 'Cool'
-            })
-            $(".add-new-data").removeClass("show")
-            $(".overlay-bg").removeClass("show")
+            // Swal.fire({
+            //   title: 'Error!',
+            //   text: 'Do you want to continue',
+            //   icon: 'error',
+            //   confirmButtonText: 'Cool'
+            // })
+            // $(".add-new-data").removeClass("show")
+            // $(".overlay-bg").removeClass("show")
+            alert(data);
           },
-          error: function (xhr, ajaxOptions, thrownError) {
-            
+          error: function(jqXHR, exception)
+          {
+            alert('error');
           }
+         
         });
 
 
