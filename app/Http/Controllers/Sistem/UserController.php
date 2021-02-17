@@ -9,6 +9,7 @@ use DataTables;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
+
 class UserController extends Controller
 {
     /**
@@ -20,7 +21,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"User List"]
+            ['link' => "dashboard-analytics", 'name' => "Home"], ['link' => "dashboard-analytics", 'name' => "Pages"], ['name' => "User List"]
         ];
         return view('/system/users/index', [
             'breadcrumbs' => $breadcrumbs,
@@ -52,27 +53,35 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // try {
-            
+        try {
             $validator = Validator::make($request->all(), [
-                'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'required',
+                'c_password' => 'required',
             ]);
-            //dd($validator->fails());
-            if ($validator->fails()) {
-                //Alert::success('Error', $validator->errors());
-                return response()->json(['error']);
+            if ($validator->passes()) {
+                User::updateOrCreate(
+                    [
+                        'name' => $request->name,
+                        'email' => $request->email
+                    ],
+
+
+                    [
+                        'name' => $request->name,
+                        'email' => $request->email,
+                        'password' => bcrypt($request->password)
+                    ]
+                );
+                return response()->json(['success' => 'Added new records.']);
             }
 
-            //Alert::success('Success', 'Data has been saved');
-            //return redirect()->route('users.index');
-            return response()->json(['success']);
-        // } catch (\Throwable $th) {
-        //     return response()->json(['data' => 'error']);
-        // }
-        
-        
+
+            return response()->json(['success' => 'Product saved successfully.']);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     /**
@@ -120,16 +129,17 @@ class UserController extends Controller
         //
     }
 
-    public function table(Request $request){
+    public function table(Request $request)
+    {
         $data = User::query();
         //dd($data);
         $dataTable = DataTables::eloquent($data)
-        ->filterColumn('name', function($query, $keyword){
-            $query->where('name','ilike',"%$keyword%");
-        })
-        ->filterColumn('email', function($query, $keyword){
-            $query->where('email','ilike',"%$keyword%");
-        });
+            ->filterColumn('name', function ($query, $keyword) {
+                $query->where('name', 'ilike', "%$keyword%");
+            })
+            ->filterColumn('email', function ($query, $keyword) {
+                $query->where('email', 'ilike', "%$keyword%");
+            });
         return response()->json($dataTable);
     }
 }
