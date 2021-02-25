@@ -13,7 +13,7 @@
   // Loop over them and prevent submission
   $("button").click(function () {
     var form = $(".needs-validation");
-    if (form[0].checkValidity() === false) {
+    if (form[0].checkValidity() === true) {
         event.preventDefault();
         event.stopPropagation();
     }

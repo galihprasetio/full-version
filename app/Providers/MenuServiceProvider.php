@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Systems\Menu;
+
 class MenuServiceProvider extends ServiceProvider
 {
     /**
@@ -24,11 +25,11 @@ class MenuServiceProvider extends ServiceProvider
     public function boot()
     {
         //get all menus from database 
-        $menus = Menu::where('is_parent',true)->orderBy('order','asc')->get();
+        $menus = Menu::where('is_parent', true)->orderBy('order', 'asc')->get();
         $parent = [];
-        
+
         foreach ($menus as $key => $menu) {
-            $submenus = Menu::where('parent_id',$menu->id)->orderBy('order','asc')->get();
+            $submenus = Menu::where('parent_id', $menu->id)->orderBy('order', 'asc')->get();
             if ($submenus->count() > 0  && $menu->is_parent) {
                 $child = [];
                 foreach ($submenus as $key => $submenu) {
@@ -37,10 +38,10 @@ class MenuServiceProvider extends ServiceProvider
                         'name' => $submenu->name,
                         'slug' => $submenu->slug,
                         'icon' => $submenu->icon,
-                    ]; 
+                    ];
                 }
             }
-            if ($menu->is_parent && $submenus->count() > 0 ) {
+            if ($menu->is_parent && $submenus->count() > 0) {
                 $parent[] = [
                     'url' => $menu->url,
                     'name' => $menu->name,
@@ -49,7 +50,7 @@ class MenuServiceProvider extends ServiceProvider
                     'navheader' => $menu->navheader,
                     'submenu' => $child,
                 ];
-            }else{
+            } else {
                 $parent[] = [
                     'url' => $menu->url,
                     'name' => $menu->name,
@@ -58,7 +59,6 @@ class MenuServiceProvider extends ServiceProvider
                     'navheader' => $menu->navheader,
                 ];
             }
-            
         }
         $result = json_encode(['menu' => $parent]);
         //dd($result);
@@ -70,6 +70,6 @@ class MenuServiceProvider extends ServiceProvider
         // $horizontalMenuData = json_decode($horizontalMenuJson);
 
         // Share all menuData to all the views
-        \View::share('menuData',[$verticalMenuData]);
+        \View::share('menuData', [$verticalMenuData]);
     }
 }

@@ -6,9 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use DataTables;
+use Illuminate\Database\Events\TransactionBeginning;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -21,7 +25,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $breadcrumbs = [
-            ['link' => "dashboard-analytics", 'name' => "Home"], ['link' => "dashboard-analytics", 'name' => "Pages"], ['name' => "User List"]
+            ['link' => "dashboard-analytics", 'name' => "Home"], ['link' => "dashboard-analytics", 'name' => "Pages"], ['name' => "List Users"]
         ];
         return view('/system/users/index', [
             'breadcrumbs' => $breadcrumbs,
@@ -53,32 +57,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
         try {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'email' => 'required|email',
+                'email' => 'required|email|unique:users',
                 'password' => 'required',
                 'c_password' => 'required',
             ]);
-            if ($validator->passes()) {
-                User::updateOrCreate(
-                    [
-                        'name' => $request->name,
-                        'email' => $request->email
-                    ],
-
-
-                    [
-                        'name' => $request->name,
-                        'email' => $request->email,
-                        'password' => bcrypt($request->password)
-                    ]
-                );
-                return response()->json(['success' => 'Added new records.']);
-            }
-
-
-            return response()->json(['success' => 'Product saved successfully.']);
         } catch (\Throwable $th) {
             //throw $th;
         }
